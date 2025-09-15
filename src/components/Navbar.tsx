@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Navbar=()=>{
     return (
@@ -11,8 +11,12 @@ const Navbar=()=>{
           <a href="#">Gyms</a>
           <a href="#">Pricing</a>
           <a href="#">Support</a>
-          <a href="#">Sign In</a>
-          <Button className="bg-blue-500">Sign Up</Button>
+          <Link to="/" className="font-medium">
+            Sign In
+          </Link>
+          <Link to="/sign-up" className="font-medium">
+            Sign Up
+          </Link>
         </div>
       </nav>
     );
