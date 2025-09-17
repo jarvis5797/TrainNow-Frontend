@@ -10,7 +10,7 @@ const LandingPage = ({isLogin} : LandingPageProps) => {
     return (
         <div className="w-screen min-h-screen flex flex-col">
             <Navbar/>
-            <section className="flex flex-1 bg-gradient-to-r from-blue-50 to-white px-16 py-12">
+            <section className="flex flex-col md:flex-row flex-1 bg-gradient-to-r from-blue-50 to-white px-6 md:px-16 py-8 md:py-12 gap-8">
                 <Hero/>
                 {isLogin ? <LoginCard/> : <SignupCard/>}
             </section>

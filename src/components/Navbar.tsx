@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const Navbar=()=>{
     return (
-      <nav className="w-full flex items-center justify-between px-8 py-4 bg-white shadow-sm">
+      <nav className="w-full flex items-center justify-between px-4 md:px-8 py-4 bg-white shadow-sm">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto md:h-10" />
         </div>
-        <div className="flex items-center gap-8 text-gray-700">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8 text-gray-700 text-sm md:text-base">
           <a href="#">How it Works</a>
           <a href="#">Gyms</a>
           <a href="#">Pricing</a>

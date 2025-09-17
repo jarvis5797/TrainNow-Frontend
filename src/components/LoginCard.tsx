@@ -6,9 +6,9 @@ import Input from "./Input";
 
 const LoginCard=()=>{
     return (
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 md:px-0">
         <Card className="w-full max-w-md shadow-xl">
-          <CardContent className="p-8">
+          <CardContent className="p-6 sm:p-8"> 
             <h2 className="text-2xl font-bold text-center mb-2">
               Welcome
             </h2>
