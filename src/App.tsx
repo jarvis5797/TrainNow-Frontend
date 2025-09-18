@@ -6,8 +6,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage isLogin={true}/>} />
-        <Route path="/sign-up" element={<LandingPage isLogin= {false}/>} />
+        <Route path="/" element={<LandingPage cardString={"Login"}/>} />
+        <Route path="/sign-up" element={<LandingPage cardString= {"SignUp"}/>} />
+        <Route path="/otp-verification" element={<LandingPage cardString= {"Otp"}/>} />
       </Routes>
     </BrowserRouter>
   );

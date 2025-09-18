@@ -1,3 +1,3 @@
 export interface LandingPageProps {
-    isLogin : boolean;
+    cardString : string;
 }
