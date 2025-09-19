@@ -24,14 +24,16 @@ const SignupCard = () => {
             <Input placeholder="Phone Number" type="tel" />
             <Input placeholder="Password" type="password" />
             <Input placeholder="Confirm Password" type="password" />
-            <Button className="w-full bg-blue-500">Sign Up</Button>
+            <Link to="/otp-verification" className="w-full">
+              <Button className="w-full bg-blue-500 mt-4">Sign Up</Button>
+            </Link>
           </div>
 
           <p className="text-center mt-6 text-sm text-gray-600">
             Already have an account?{" "}
             <Link to="/" className="text-blue-500 font-medium">
-                Sign In
-              </Link>
+              Sign In
+            </Link>
           </p>
 
 
