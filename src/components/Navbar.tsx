@@ -8,7 +8,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex items-center gap-2">
         <img src="/logo.png" alt="Logo" className="h-8 w-8 object-contain" />
-        <span className="font-semibold text-lg">GymFinder</span>
+        <span className="font-semibold text-lg">TrainNow</span>
       </div>
 
       {/* Desktop Links */}
@@ -17,7 +17,6 @@ const Navbar = () => {
         <a href="#">Gyms</a>
         <a href="#">Pricing</a>
         <a href="#">Support</a>
-        <a href="#">Sign In</a>
         <Link to="/" className="font-medium">
             Sign In
           </Link>
