@@ -4,3 +4,8 @@ export interface SignUpRequest {
   phoneNumber: string;
   password: string;
 }
+
+export interface SignInRequest{
+  identifier: string;
+  password: string;
+}
