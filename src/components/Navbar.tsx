@@ -25,7 +25,6 @@ const Navbar = () => {
           </Link>
       </div>
 
-      {/* Mobile Hamburger */}
       <button
         className="md:hidden flex flex-col gap-1.5"
         onClick={() => setIsOpen(!isOpen)}
@@ -35,7 +34,6 @@ const Navbar = () => {
         <span className="w-6 h-0.5 bg-gray-800"></span>
       </button>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-6 md:hidden z-50">
           <a href="#" onClick={() => setIsOpen(false)}>
