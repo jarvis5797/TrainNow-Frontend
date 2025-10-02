@@ -4,7 +4,6 @@ import Card from "./Card";
 import CardContent from "./CardContent";
 import Input from "./Input";
 import { useState } from "react";
-import api from "../api/axios";
 import { signUp } from "../services/authservice";
 
 const SignupCard = () => {
