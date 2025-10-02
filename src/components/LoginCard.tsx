@@ -22,7 +22,11 @@ const LoginCard = () => {
     try {
       await signIn(formData).then((data) => {
         doLogin(data.token, () => {
-          navigate("/dashboard");
+          if(data.userResponseDto.role==='ADMIN'){
+            navigate("admin");
+          }else{
+            navigate("dashboard");
+          }
         });
       });
     } catch (err: any) {

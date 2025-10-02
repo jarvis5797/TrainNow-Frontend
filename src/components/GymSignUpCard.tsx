@@ -1,12 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+
 import Button from "./Button";
 import Card from "./Card";
 import CardContent from "./CardContent";
 import Input from "./Input";
 import { useState } from "react";
+import { signUp } from "../services/authservice";
 
-const GymSignUpCard = () => {
-  const navigate = useNavigate();
+interface GymSignUpCardProps {
+  onCancel: ()=> void;
+  onNext: (userId: string)=> void;
+}
+
+const GymSignUpCard = ({onCancel, onNext} : GymSignUpCardProps) => {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -61,25 +66,21 @@ const GymSignUpCard = () => {
       return;
     }
 
-    // try{
-    //   const payload={
-    //     name: formData.name,
-    //     email: formData.email,
-    //     phoneNumber: formData.phoneNumber,
-    //     password: formData.password,
-    //     role:'GYM_OWNER',
-    //   };
+    try{
+      const payload={
+        name: formData.name,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        password: formData.password,
+        role:'GYM_OWNER',
+      };
 
-    //   await GymOwnerSignUp(payload).then((data)=>{
-    //     navigate("/otp-verification" , {
-    //       state:{
-    //         userId: data,
-    //       }
-    //     });
-    //   });
-    // }catch(err: any){
-    //   setError(err.reponse?.data?.messgae || "SignUp failed. Try again.")
-    // }
+      await signUp(payload).then((data)=>{
+        onNext(data);
+      });
+    }catch(err: any){
+      setError(err.reponse?.data?.messgae || "SignUp failed. Try again.")
+    }
   };
 
   return (
@@ -88,7 +89,7 @@ const GymSignUpCard = () => {
         <CardContent className="p-8">
           <h2 className="text-2xl font-bold text-center mb-2">Add Gym Owner</h2>
           <p className="text-gray-600 text-center mb-6">
-            Sign up to get started with TrainNow
+            Create gym owner account and continue!
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -127,9 +128,22 @@ const GymSignUpCard = () => {
               value={formData.confirmPassword}
               onChange={handleChange}
             />
-            <Button type="submit" className="w-full bg-blue-500 mt-4">
-              Add User
-            </Button>
+
+            <div className="flex justify-between gap-4 mt-6">
+              <Button
+                type="button"
+                className="w-1/2 bg-gray-200 text-gray-700 hover:bg-gray-300"
+                onClick={onCancel}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                className="w-1/2 bg-blue-500 text-white hover:bg-blue-600"
+              >
+                Next
+              </Button>
+            </div>
           </form>
         </CardContent>
       </Card>

@@ -7,10 +7,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage cardString={"Login"}/>} />
-        <Route path="/sign-up" element={<LandingPage cardString= {"SignUp"}/>} />
-        <Route path="/otp-verification" element={<LandingPage cardString= {"Otp"}/>} />
-        <Route path="/dashboard" element={<DashBoard/>} />
+        <Route path="" element={<LandingPage cardString={"Login"}/>} />
+        <Route path="sign-up" element={<LandingPage cardString= {"SignUp"}/>} />
+        <Route path="otp-verification" element={<LandingPage cardString= {"Otp"}/>} />
+        <Route path="admin" element={<DashBoard userType={"ADMIN"}/>}>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
